@@ -17,7 +17,7 @@ class BankAccount {
     public void deposit(double amount) {
         if (amount > 0) {
             balance += amount;
-            System.out.println("Successfully deposited $" + amount);
+            System.out.println("Successfully deposited ₹" + amount);
         } else {
             System.out.println("Invalid deposit amount.");
         }
@@ -27,7 +27,7 @@ class BankAccount {
     public void withdraw(double amount) {
         if (amount > 0 && amount <= balance) {
             balance -= amount;
-            System.out.println("Successfully withdrew $" + amount);
+            System.out.println("Successfully withdrew ₹" + amount);
         } else if (amount > balance) {
             System.out.println("Insufficient balance for this withdrawal.");
         } else {
@@ -66,19 +66,19 @@ class ATM {
             switch (choice) {
                 case 1:
                     // Deposit option
-                    System.out.print("Enter amount to deposit: $");
+                    System.out.print("Enter amount to deposit: ₹");
                     double depositAmount = scanner.nextDouble();
                     account.deposit(depositAmount);
                     break;
                 case 2:
                     // Withdraw option
-                    System.out.print("Enter amount to withdraw: $");
+                    System.out.print("Enter amount to withdraw: ₹");
                     double withdrawAmount = scanner.nextDouble();
                     account.withdraw(withdrawAmount);
                     break;
                 case 3:
                     // Check balance option
-                    System.out.println("Current Balance: $" + account.getBalance());
+                    System.out.println("Current Balance: ₹" + account.getBalance());
                     break;
                 case 4:
                     // Exit option
@@ -97,7 +97,7 @@ public class ATMProject {
         Scanner scanner = new Scanner(System.in);
 
         // Initialize a new bank account with a starting balance
-        System.out.print("Enter initial balance for your bank account: $");
+        System.out.print("Enter initial balance for your bank account: ₹");
         double initialBalance = scanner.nextDouble();
         BankAccount userAccount = new BankAccount(initialBalance);
 
